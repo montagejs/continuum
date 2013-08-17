@@ -1,0 +1,41 @@
+<script src="../q/q.js"></script>
+<pre>
+
+    Q().then(function () {
+        throw new Error("Never handled");
+    });
+
+    Q.reject("Reason without a stack trace");
+
+    var rejection = Q.delay(1000)
+    .then(function () {
+        throw new Error("Eventually handled");
+    })
+
+    Q.delay(2000)
+    .thenResolve(rejection)
+    .catch(function () {
+        // handled
+    });
+
+</pre>
+<script>
+
+    Q().then(function () {
+        throw new Error("Never handled");
+    });
+
+    Q.reject("Reason without a stack trace");
+
+    var rejection = Q.delay(1000)
+    .then(function () {
+        throw new Error("Eventually handled");
+    })
+
+    Q.delay(2000)
+    .thenResolve(rejection)
+    .catch(function () {
+        // handled
+    });
+
+</script>

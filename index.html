@@ -6,7 +6,7 @@
 
             body {
                 padding: 0;
-                margin: 0;
+                margin: 1px;
             }
 
             * {
@@ -60,14 +60,15 @@
 
         <div class="info-entry entry">
             <span id="resolved" class="info">0</span> resolved,
-            <span id="pending" class="info">0</span> pending
+            <span id="pending" class="info">0</span> pending,
+            <span id="unhandled" class="info">0</span> unhandled errors
         </div>
-        <div class="info-entry entry"><span id="unhandled" class="info">0</span> unhandled errors</div>
 
         <div id="rejections">
         </div>
 
         <pre id="console"></pre>
+
         <script src="index.js"></script>
 
     </body>

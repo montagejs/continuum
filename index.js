@@ -34,21 +34,23 @@ var handlers = {
         // seems to be useful sometimes.
         needsDraw();
     },
-    "defer": function () {
+    "defer": function (id, stack, timestamp) {
         pending++;
         needsDraw();
     },
-    "resolve": function () {
+    "resolve": function (id, resolutionId, timestamp) {
         pending--;
         resolved++;
         needsDraw();
     },
-    "reject": function (id, message, stack) {
+    "reject": function (id, message, stack, timestamp) {
         rejections[id] = message;
         stacks[id] = stack;
         needsDraw();
     },
-    "handle": function (id) {
+    "fulfill": function (id, timestamp) {
+    },
+    "handle": function (id, resolutionId, timestamp) {
         delete rejections[id];
         delete stacks[id];
         delete expanded[id];

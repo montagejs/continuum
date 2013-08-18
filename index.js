@@ -2,12 +2,6 @@
 var pre = document.querySelector("pre#console");
 var rejectionsElement = document.querySelector("#rejections");
 
-function log(text) {
-    pre.appendChild(document.createTextNode("" + text + "\n"));
-}
-
-onerror = log;
-
 var port = chrome.runtime.connect();
 port.postMessage(["connect", chrome.devtools.inspectedWindow.tabId]);
 
@@ -22,8 +16,6 @@ port.onMessage.addListener(function (message, sender) {
         var type = message[0];
         var handler = handlers[type] || noop;
         handler.apply(null, message.slice(1));
-    } else {
-        log(''+message);
     }
 });
 

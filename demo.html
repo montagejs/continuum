@@ -1,6 +1,8 @@
 <script src="../q/q.js"></script>
 <pre>
 
+    Q.longStackSupport = true;
+
     Q().then(function () {
         throw new Error("Never handled");
     });
@@ -17,10 +19,23 @@
     .catch(function () {
         // handled
     });
+
+    var deferred = Q.defer(); // ...suspense
+    setInterval(function () {
+        deferred.notify(Math.random());
+    }, 1000);
+
+    var promises = [];
+    for (var i = 0; i < 10; i++) {
+        promises.push(Q.delay(10000 * Math.random()));
+    }
+    Q.all(promises);
 
 </pre>
 <script>
 
+    Q.longStackSupport = true;
+
     Q().then(function () {
         throw new Error("Never handled");
     });
@@ -37,5 +52,16 @@
     .catch(function () {
         // handled
     });
+
+    var deferred = Q.defer(); // ...suspense
+    setInterval(function () {
+        deferred.notify(Math.random());
+    }, 1000);
+
+    var promises = [];
+    for (var i = 0; i < 10; i++) {
+        promises.push(Q.delay(10000 * Math.random()));
+    }
+    Q.all(promises);
 
 </script>

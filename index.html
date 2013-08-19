@@ -15,43 +15,45 @@
             }
 
             .entry {
+                min-height: 1em;
                 padding-top: 2px;
                 padding-bottom: 2px;
                 padding-left: 10px;
                 padding-right: 10px;
                 border-bottom: solid #ccc 1px;
+                cursor: pointer;
             }
 
-            .info-entry {
-                color: gray;
-            }
-
-            .info {
-                color: black;
-            }
-
-            .warn-entry {
-                background-color: #ffc;
-                color: black;
-            }
-
-            .error-entry {
+            .rejected {
                 background-color: red;
                 color: white;
             }
 
-            .stack-entry {
+            .stack {
                 font-family: monospace;
                 white-space: pre;
-            }
-
-            .reject-entry {
-                cursor: pointer;
             }
 
             .arrow {
                 font-size: 80%;
                 padding-right: 5px;
+            }
+
+
+            @-webkit-keyframes indeterminate {
+                from {
+                    background-position: 1000px;
+                }
+                to {
+                    background-position: 0;
+                }
+            }
+
+            .indeterminate {
+                background: -webkit-linear-gradient(left, #7db9e8, white, #7db9e8);
+                background-repeat: repeat-x;
+                background-size: 1000px 100%;
+                -webkit-animation: indeterminate 4s linear infinite;
             }
 
         </style>
@@ -64,7 +66,7 @@
             <span id="unhandled" class="info">0</span> unhandled errors
         </div>
 
-        <div id="rejections">
+        <div id="promises">
         </div>
 
         <script src="index.js"></script>

@@ -7,7 +7,7 @@
     "48": "then-48.png",
     "128": "then-128.png"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "permissions": [
      "<all_urls>"
   ],

@@ -1,0 +1,14 @@
+{
+	"name": "continuum",
+	"version": "0.0.2",
+	"dependencies": {
+		"montage": "0.13.5"
+	},
+	"devDependencies": {
+		"montage-testing": "0.2.0"
+	},
+	"exclude": [
+		"run-tests.html",
+		"test"
+	]
+}

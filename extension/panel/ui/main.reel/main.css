@@ -1,0 +1,51 @@
+.Main {
+    padding: 0;
+    margin: 1px;
+}
+
+.Main * {
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.entry {
+    min-height: 1em;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: solid #ccc 1px;
+    cursor: pointer;
+}
+
+.rejected {
+    background-color: red;
+    color: white;
+}
+
+.stack {
+    font-family: monospace;
+    white-space: pre;
+}
+
+.arrow {
+    font-size: 80%;
+    padding-right: 5px;
+}
+
+
+@-webkit-keyframes indeterminate {
+    from {
+        background-position: 1000px;
+    }
+    to {
+        background-position: 0;
+    }
+}
+
+.indeterminate {
+    background: -webkit-linear-gradient(left, #7db9e8, white, #7db9e8);
+    background-repeat: repeat-x;
+    background-size: 1000px 100%;
+    -webkit-animation: indeterminate 4s linear infinite;
+}
